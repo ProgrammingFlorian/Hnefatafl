@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" standalone="yes"?>
+
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewbox="0 0 600 600" width="600" height="600">
+<circle fill="#e6e6e6" cx="300" cy="300" r="300"/>
+
+<path fill="#000" transform="scale(0.5) translate(100, 100)" d="M928.7,377.5H622.5V71.2c0-33.8-27.4-61.2-61.2-61.2H438.7c-33.9,0-61.2,27.5-61.2,61.2v306.3H71.2c-33.9,0-61.2,27.4-61.2,61.3v122.5c0,33.9,27.4,61.2,61.2,61.2h306.3v306.3c0,33.9,27.4,61.3,61.2,61.3h122.5c33.9,0,61.2-27.4,61.2-61.3V622.5h306.3c33.9,0,61.2-27.4,61.2-61.2V438.7C990,404.9,962.6,377.5,928.7,377.5z"/>
+</svg>

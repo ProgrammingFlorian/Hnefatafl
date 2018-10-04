@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hnefatafl Online</title>
+        <link rel="stylesheet" href="index.css">
+        <script src="socket.js"></script>
+        <script src="index.js"></script>
+        
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+    </head>
+    
+    <body>
+        <center>
+            <div id="joinscreen">
+                <div class="center">
+                    <div class="btn" id="btn_joinr">Join/Create Random Room</div><br>
+                    <div class="btn btn_out" id="btn_join">Join/Create Private Room</div><br>
+                    <input id="roomname" type="text" placeholder="Private Room Name">
+                    <p id="roomexists" style="display: none">Room already exists</p>
+                </div>
+            </div>
+        </center>
+        <center>
+            <p id="me" style="display: none"></p>
+            <p id="him" style="display: none"></p>
+            <p id="game" style="display: none"></p>
+            <p id="room"></p>
+            <p id="you"></p>
+            <p id="text"></p>
+            <table cellspacing="0" cellpadding="0">
+                <img class="cross l u" src="cross.svg">
+                <img class="cross l b" src="cross.svg">
+                <img class="cross r u" src="cross.svg">
+                <img class="cross r b" src="cross.svg">
+                <tr>
+                    <td id="00" bgcolor="#cc8140"></td>
+                    <td id="01" bgcolor="#ffc895"></td>
+                    <td id="02" bgcolor="#cc8140"></td>
+                    <td id="03" bgcolor="#ffc895">
+                        <img class="black" src="black.svg">
+                    </td>
+                    <td id="04" bgcolor="#cc8140">
+                        <img class="black" src="black.svg">
+                    </td>
+                    <td id="05" bgcolor="#ffc895">
+                        <img class="black" src="black.svg">
+                    </td>
+                    <td id="06" bgcolor="#cc8140">
+                        <img class="black" src="black.svg">
+                    </td>
+                    <td id="07" bgcolor="#ffc895">
+                        <img class="black" src="black.svg">
+                    </td>
+                    <td id="08" bgcolor="#cc8140"></td>
+                    <td id="09" bgcolor="#ffc895"></td>
+                    <td id="0o" bgcolor="#cc8140"></td>
+                </tr>
+                <tr>
+                    <td id="10" bgcolor="#ffc895"></td>
+                    <td id="11" bgcolor="#cc8140"></td>
+                    <td id="12" bgcolor="#ffc895"></td>
+                    <td id="13" bgcolor="#cc8140"></td>
+                    <td id="14" bgcolor="#ffc895"></td>
+                    <td id="15" bgcolor="#cc8140">
+                        <img class="black" src="black.svg">
+                    </td>
+                    <td id="16" bgcolor="#ffc895"></td>
+                    <td id="17" bgcolor="#cc8140"></td>
+                    <td id="18" bgcolor="#ffc895"></td>
+                    <td id="19" bgcolor="#cc8140"></td>
+                    <td id="1o" bgcolor="#ffc895"></td>
+                </tr>
+                <tr>
+                    <td id="20" bgcolor="#cc8140"></td>
+                    <td id="21" bgcolor="#ffc895"></td>
+                    <td id="22" bgcolor="#cc8140"></td>
+                    <td id="23" bgcolor="#ffc895"></td>
+                    <td id="24" bgcolor="#cc8140"></td>
+                    <td id="25" bgcolor="#ffc895"></td>
+                    <td id="26" bgcolor="#cc8140"></td>
+                    <td id="27" bgcolor="#ffc895"></td>
+                    <td id="28" bgcolor="#cc8140"></td>
+                    <td id="29" bgcolor="#ffc895"></td>
+                    <td id="2o" bgcolor="#cc8140"></td>
+                </tr>
+                <tr>
+                    <td id="30" bgcolor="#ffc895">
+                        <img class="black" src="black.svg">
+                    </td>
+                    <td id="31" bgcolor="#cc8140"></td>
+                    <td id="32" bgcolor="#ffc895"></td>
+                    <td id="33" bgcolor="#cc8140"></td>
+                    <td id="34" bgcolor="#ffc895"></td>
+                    <td id="35" bgcolor="#cc8140">
+                        <img class="white" src="white.svg">
+                    </td>
+                    <td id="36" bgcolor="#ffc895"></td>
+                    <td id="37" bgcolor="#cc8140"></td>
+                    <td id="38" bgcolor="#ffc895"></td>
+                    <td id="39" bgcolor="#cc8140"></td>
+                    <td id="3o" bgcolor="#ffc895">
+                        <img class="black" src="black.svg">
+                    </td>
+                </tr>
+                <tr>
+                    <td id="40" bgcolor="#cc8140">
+                        <img class="black" src="black.svg">
+                    </td>
+                    <td id="41" bgcolor="#ffc895"></td>
+                    <td id="42" bgcolor="#cc8140"></td>
+                    <td id="43" bgcolor="#ffc895"></td>
+                    <td id="44" bgcolor="#cc8140">
+                        <img class="white" src="white.svg">
+                    </td>
+                    <td id="45" bgcolor="#ffc895">
+                        <img class="white" src="white.svg">
+                    </td>
+                    <td id="46" bgcolor="#cc8140">
+                        <img class="white" src="white.svg">
+                    </td>
+                    <td id="47" bgcolor="#ffc895"></td>
+                    <td id="48" bgcolor="#cc8140"></td>
+                    <td id="49" bgcolor="#ffc895"></td>
+                    <td id="4o" bgcolor="#cc8140">
+                        <img class="black" src="black.svg">
+                    </td>
+                </tr>
+                <tr>
+                    <td id="50" bgcolor="#ffc895">
+                        <img class="black" src="black.svg">
+                    </td>
+                    <td id="51" bgcolor="#cc8140">
+                        <img class="black" src="black.svg">
+                    </td>
+                    <td id="52" bgcolor="#ffc895"></td>
+                    <td id="53" bgcolor="#cc8140">
+                        <img class="white" src="white.svg">
+                    </td>
+                    <td id="54" bgcolor="#ffc895">
+                        <img class="white" src="white.svg">
+                    </td>
+                    <td id="55" class="mid">
+                        <img class="king" src="king.svg">
+                    </td>
+                    <td id="56" bgcolor="#ffc895">
+                        <img class="white" src="white.svg">
+                    </td>
+                    <td id="57" bgcolor="#cc8140">
+                        <img class="white" src="white.svg">
+                    </td>
+                    <td id="58" bgcolor="#ffc895"></td>
+                    <td id="59" bgcolor="#cc8140">
+                        <img class="black" src="black.svg">
+                    </td>
+                    <td id="5o" bgcolor="#ffc895">
+                        <img class="black" src="black.svg">
+                    </td>
+                </tr>
+                <tr>
+                    <td id="60" bgcolor="#cc8140">
+                        <img class="black" src="black.svg">
+                    </td>
+                    <td id="61" bgcolor="#ffc895"></td>
+                    <td id="62" bgcolor="#cc8140"></td>
+                    <td id="63" bgcolor="#ffc895"></td>
+                    <td id="64" bgcolor="#cc8140">
+                        <img class="white" src="white.svg">
+                    </td>
+                    <td id="65" bgcolor="#ffc895">
+                        <img class="white" src="white.svg">
+                    </td>
+                    <td id="66" bgcolor="#cc8140">
+                        <img class="white" src="white.svg">
+                    </td>
+                    <td id="67" bgcolor="#ffc895"></td>
+                    <td id="68" bgcolor="#cc8140"></td>
+                    <td id="69" bgcolor="#ffc895"></td>
+                    <td id="6o" bgcolor="#cc8140">
+                        <img class="black" src="black.svg">
+                    </td>
+                </tr>
+                <tr>
+                    <td id="70" bgcolor="#ffc895">
+                        <img class="black" src="black.svg">
+                    </td>
+                    <td id="71" bgcolor="#cc8140"></td>
+                    <td id="72" bgcolor="#ffc895"></td>
+                    <td id="73" bgcolor="#cc8140"></td>
+                    <td id="74" bgcolor="#ffc895"></td>
+                    <td id="75" bgcolor="#cc8140">
+                        <img class="white" src="white.svg">
+                    </td>
+                    <td id="76" bgcolor="#ffc895"></td>
+                    <td id="77" bgcolor="#cc8140"></td>
+                    <td id="78" bgcolor="#ffc895"></td>
+                    <td id="79" bgcolor="#cc8140"></td>
+                    <td id="7o" bgcolor="#ffc895">
+                        <img class="black" src="black.svg">
+                    </td>
+                </tr>
+                <tr>
+                    <td id="80" bgcolor="#cc8140"></td>
+                    <td id="81" bgcolor="#ffc895"></td>
+                    <td id="82" bgcolor="#cc8140"></td>
+                    <td id="83" bgcolor="#ffc895"></td>
+                    <td id="84" bgcolor="#cc8140"></td>
+                    <td id="85" bgcolor="#ffc895"></td>
+                    <td id="86" bgcolor="#cc8140"></td>
+                    <td id="87" bgcolor="#ffc895"></td>
+                    <td id="88" bgcolor="#cc8140"></td>
+                    <td id="89" bgcolor="#ffc895"></td>
+                    <td id="8o" bgcolor="#cc8140"></td>
+                </tr>
+                <tr>
+                    <td id="90" bgcolor="#ffc895"></td>
+                    <td id="91" bgcolor="#cc8140"></td>
+                    <td id="92" bgcolor="#ffc895"></td>
+                    <td id="93" bgcolor="#cc8140"></td>
+                    <td id="94" bgcolor="#ffc895"></td>
+                    <td id="95" bgcolor="#cc8140">
+                        <img class="black" src="black.svg">
+                    </td>
+                    <td id="96" bgcolor="#ffc895"></td>
+                    <td id="97" bgcolor="#cc8140"></td>
+                    <td id="98" bgcolor="#ffc895"></td>
+                    <td id="99" bgcolor="#cc8140"></td>
+                    <td id="9o" bgcolor="#ffc895"></td>
+                </tr>
+                <tr>
+                    <td id="o0" bgcolor="#cc8140"></td>
+                    <td id="o1" bgcolor="#ffc895"></td>
+                    <td id="o2" bgcolor="#cc8140"></td>
+                    <td id="o3" bgcolor="#ffc895">
+                        <img class="black" src="black.svg">
+                    </td>
+                    <td id="o4" bgcolor="#cc8140">
+                        <img class="black" src="black.svg">
+                    </td>
+                    <td id="o5" bgcolor="#ffc895">
+                        <img class="black" src="black.svg">
+                    </td>
+                    <td id="o6" bgcolor="#cc8140">
+                        <img class="black" src="black.svg">
+                    </td>
+                    <td id="o7" bgcolor="#ffc895">
+                        <img class="black" src="black.svg">
+                    </td>
+                    <td id="o8" bgcolor="#cc8140"></td>
+                    <td id="o9" bgcolor="#ffc895"></td>
+                    <td id="oo" bgcolor="#cc8140"></td>
+                </tr>
+            </table>
+        </center>
+    </body>
+</html>
